@@ -30,15 +30,16 @@ $("#totalNum").html(userTotal);
 var reset = function() {
     //set user back to 0 !Very Important!
     userTotal = 0;
-    randomNum = Math.floor(Math.random() * 120 + 19);
+    console.log(userTotal);
+    randomNumber = Math.floor(Math.random() * 101 + 19);
     var crystal_1 = Math.floor(Math.random() * 12 + 1);
     var crystal_2 =  Math.floor(Math.random() * 12 + 1);
     var crystal_3 =  Math.floor(Math.random() * 12 + 1);
     var crystal_4 =  Math.floor(Math.random() * 12 + 1);
     
-    console.log(randomNum);
+    console.log(randomNumber);
 
-    $("#numToGuess").html(randomNum);
+    $("#numToGuess").html(randomNumber);
     $("#totalNum").html(userTotal);
     $("#wins").html(wins);
     $("#losses").html(losses);
@@ -59,7 +60,7 @@ var winCondition = function(){
     } else if (userTotal > randomNumber){
         losses++;
         alert("Ha you lost, what a scrub");
-        $("losses").html(losses);
+        $("#losses").html(losses);
         reset();
     }
 }
@@ -72,7 +73,6 @@ $("#crystal_1").on("click", function (){
     console.log(userTotal);
     $("#totalNum").html(userTotal);
     winCondition();
-
 })
 
 $("#crystal_2").on("click", function (){
